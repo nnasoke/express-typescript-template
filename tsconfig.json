@@ -1,0 +1,28 @@
+{
+  "compilerOptions": {
+    /* Visit https://aka.ms/tsconfig.json to read more about this file */
+    "baseUrl": "./",
+
+    "types": ["intern"],
+
+    "outDir": "dist",
+
+    "target": "es5",
+    "module": "commonjs",
+
+    "paths": {
+      "@controllers/*": ["src/controllers/*"],
+      "@shared/*": ["src/shared/*"],
+      "@models/*": ["src/models/*"]
+    },
+
+    /* Strict Type-Checking Options */
+    "strict": true,
+    "esModuleInterop": true,
+
+    /* Advanced Options */
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true
+  },
+  "include": ["./src/**/*.ts", "./tests/**/*.ts"]
+}

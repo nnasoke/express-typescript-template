@@ -1,0 +1,6 @@
+{
+  "suites": "tests/**/*.ts",
+  "functionalSuites": "tests/functional/**/*.ts",
+  "supportSuites": "tests/support/**/*.ts",
+  "environments": ["node"]
+}
