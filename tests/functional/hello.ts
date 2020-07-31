@@ -1,9 +1,10 @@
+import request from "supertest";
+import App from "../../src/App";
 import { describe, it, expect } from "../supports";
 
-describe("app", () => {
-  it("should show a welcome heading", async (test) => {
-    const { remote } = test;
-    await remote.get("/api/hello");
+describe("Hello", () => {
+  it("should show a welcome message", async (test) => {
+    request(App).get("/api/hello");
     expect(2).eq(6);
   });
 });

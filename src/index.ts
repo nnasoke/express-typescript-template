@@ -1,7 +1,7 @@
 import App from "./App";
-import Envs from "./Envs";
+import Env from "./Env";
 import logger from "@shared/logger";
 
-App.listen(Envs.serverPort, Envs.serverHost, () => {
-  logger.info(`Server is running at ${Envs.serverHost}:${Envs.serverPort}.`);
+App.listen(Env.serverPort, Env.serverHost, () => {
+  logger.info(`Server is running at ${Env.serverHost}:${Env.serverPort}.`);
 });

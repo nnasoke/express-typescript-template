@@ -1,8 +1,8 @@
 import express, { Request, Response, NextFunction } from "express";
 import cors from "cors";
 import { BAD_REQUEST } from "http-status-codes";
-import Envs from "./Envs";
-import { errorLogs, accessLogs } from "src/middleware/requestLogs";
+import Env from "./Env";
+import { errorLogs, accessLogs } from "@middleware/requestLogs";
 import logger from "@shared/logger";
 import BaseRouter from "./Routes";
 
@@ -15,7 +15,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // Access & error logs
-if (Envs.isProduction) app.use(errorLogs());
+if (Env.isProduction) app.use(errorLogs());
 else app.use(accessLogs());
 
 // APIs
