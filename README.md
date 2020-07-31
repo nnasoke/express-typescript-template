@@ -1,6 +1,6 @@
 ## Express Typescript Template
 
-A bootstrap project for Express and typescript.
+A bootstrap project that us express and typescript.
 
 ### Developent
 
