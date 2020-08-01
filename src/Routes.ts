@@ -1,7 +1,13 @@
 import { Router } from "express";
-import Hello from "./controllers/Hello";
+import Hello from "./controllers/hello";
+import HealhtCheck from "./controllers/healthCheck";
 
-const routes = Router();
-routes.use(Hello);
+// health check api
+const healthCheck = Router();
+healthCheck.use(HealhtCheck);
 
-export default routes;
+// the rest othere rouetes
+const BaseRouter = Router();
+BaseRouter.use(Hello);
+
+export { healthCheck, BaseRouter };
