@@ -1,24 +1,17 @@
 import App from "../../src/App";
 import supertest from "supertest";
-import * as http from "http";
 
 import { describe, it } from "../helpers";
-import { before, after } from "intern/lib/interfaces/tdd";
 
 describe("Hello", () => {
-  let server: http.Server;
-  let client: supertest.SuperAgentTest;
+  const client = supertest(App);
 
-  before(() => {
-    server = App.listen();
-    client = supertest.agent(server);
-  });
-
-  after(() => {
-    server.close();
-  });
-
-  it("should show a welcome message", async (test) => {
-    client.get("/api/hello").expect(200, "Hey");
+  it("should show a ok text", async (test) => {
+    client
+      .get("/api/hello")
+      .expect(200, JSON.stringify("Hello there!"))
+      .end(function (err, res) {
+        if (err) throw err;
+      });
   });
 });

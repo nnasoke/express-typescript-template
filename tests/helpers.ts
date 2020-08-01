@@ -1,3 +1,5 @@
+import intern from "intern";
+
 const {
   describe,
   it,

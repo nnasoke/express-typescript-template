@@ -1,5 +1,3 @@
-import fs from "fs";
-import path from "path";
 import morgan from "morgan";
 
 /**
@@ -7,11 +5,7 @@ import morgan from "morgan";
  * @returns morgan middleware
  */
 function accessLogs() {
-  return morgan("combined", {
-    stream: fs.createWriteStream(path.join(__dirname, "../../access.log"), {
-      flags: "a"
-    })
-  });
+  return morgan("combined");
 }
 
 /**
@@ -20,9 +14,7 @@ function accessLogs() {
  */
 function errorLogs() {
   return morgan("short", {
-    skip: function (req, res) {
-      return res.statusCode < 400;
-    }
+    skip: (req, res) => res.statusCode < 400,
   });
 }
 
