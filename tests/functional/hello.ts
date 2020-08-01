@@ -1,10 +1,24 @@
-import request from "supertest";
 import App from "../../src/App";
-import { describe, it, expect } from "../supports";
+import supertest from "supertest";
+import * as http from "http";
+
+import { describe, it } from "../helpers";
+import { before, after } from "intern/lib/interfaces/tdd";
 
 describe("Hello", () => {
+  let server: http.Server;
+  let client: supertest.SuperAgentTest;
+
+  before(() => {
+    server = App.listen();
+    client = supertest.agent(server);
+  });
+
+  after(() => {
+    server.close();
+  });
+
   it("should show a welcome message", async (test) => {
-    request(App).get("/api/hello");
-    expect(2).eq(6);
+    client.get("/api/hello").expect(200, "Hey");
   });
 });

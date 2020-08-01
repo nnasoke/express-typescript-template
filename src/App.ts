@@ -2,8 +2,8 @@ import express, { Request, Response, NextFunction } from "express";
 import cors from "cors";
 import { BAD_REQUEST } from "http-status-codes";
 import Env from "./Env";
-import { errorLogs, accessLogs } from "@middleware/requestLogs";
-import logger from "@shared/logger";
+import { errorLogs, accessLogs } from "./middleware/requestLogs";
+import logger from "./shared/logger";
 import BaseRouter from "./Routes";
 
 // Init application

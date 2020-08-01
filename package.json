@@ -7,7 +7,7 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "test": "intern",
+    "test": "intern && exit 0",
     "build": "tsc",
     "start:dev": "nodemon",
     "start:prod": "node ./dist",

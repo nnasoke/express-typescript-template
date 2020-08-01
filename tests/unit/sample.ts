@@ -1,8 +1,7 @@
-import { describe, it, expect } from "../supports";
+import { describe, it, assert } from "../helpers";
 
 describe("Sample", () => {
-  it("should have a name property when instantiated", () => {
-    const obj = { name: "foo" };
-    expect(obj).to.have.property("name", "foo");
+  it("should works well", () => {
+    assert.equal(0, 0);
   });
 });

@@ -2,20 +2,11 @@
   "compilerOptions": {
     /* Visit https://aka.ms/tsconfig.json to read more about this file */
     "baseUrl": "./",
-
-    "types": ["intern"],
-
     "outDir": "dist",
-
     "target": "es5",
     "module": "commonjs",
 
-    "paths": {
-      "@controllers/*": ["src/controllers/*"],
-      "@shared/*": ["src/shared/*"],
-      "@models/*": ["src/models/*"],
-      "@middleware/*": ["src/middleware/*"]
-    },
+    "types": ["intern"],
 
     /* Strict Type-Checking Options */
     "strict": true,
@@ -25,11 +16,5 @@
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true
   },
-  "include": ["./src/**/*.ts", "./tests/**/*.ts"],
-  "moduleNameMapper": {
-    "@controllers/(.*)": "<rootDir>/src/controllers/$1",
-    "@shared/(.*)": "<rootDir>/src/shared/$1",
-    "@models/(.*)": "<rootDir>/src/models/$1",
-    "@middleware/(.*)": "<rootDir>/src/middleware/$1",
-  },
+  "include": ["./src/**/*.ts", "./tests/**/*.ts"]
 }
