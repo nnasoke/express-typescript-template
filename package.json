@@ -9,17 +9,9 @@
   "scripts": {
     "test": "intern && exit 0",
     "build": "tsc",
-    "start:dev": "nodemon",
+    "start:dev": "nodemon --watch 'src/**/*.ts' --exec 'ts-node' src/index.ts",
     "start:prod": "node ./dist",
     "lint": "tslint --project \"tsconfig.json\""
-  },
-  "nodemonConfig": {
-    "watch": [
-      "src"
-    ],
-    "ext": "ts",
-    "ignore": [],
-    "exec": "ts-node -r tsconfig-paths/register ./src"
   },
   "devDependencies": {
     "@types/cors": "^2.8.6",
@@ -33,7 +25,6 @@
     "prettier": "^2.0.5",
     "supertest": "^4.0.2",
     "ts-node": "^8.10.2",
-    "tsconfig-paths": "^3.9.0",
     "tslint": "^6.1.2",
     "typescript": "^3.9.7"
   },
