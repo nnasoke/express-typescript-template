@@ -6,6 +6,16 @@ import Env from "./env";
 import { errorLogs, accessLogs } from "./middleware/requestLogs";
 import logger from "./shared/logger";
 import { BaseRouter, healthCheck } from "./routes";
+import { initDb } from "./shared/connection";
+
+// initialise database at first load
+(async () => {
+  await initDb()
+    .then()
+    .catch((err) => {
+      throw err;
+    });
+})();
 
 // Init application
 const app = express();

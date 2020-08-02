@@ -5,4 +5,4 @@ function initDb(): Promise<Connection> {
   return createConnection(options as ConnectionOptions);
 }
 
-export default initDb;
+export { initDb };
