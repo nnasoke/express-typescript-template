@@ -1,4 +1,8 @@
 import options from "../configs/database";
-import { createConnection } from "typeorm";
+import { createConnection, ConnectionOptions, Connection } from "typeorm";
 
-export default createConnection(options);
+function initDb(): Promise<Connection> {
+  return createConnection(options as ConnectionOptions);
+}
+
+export default initDb;

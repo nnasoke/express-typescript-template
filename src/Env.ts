@@ -11,10 +11,11 @@ interface Env {
     production: boolean;
   };
   SERVER: {
-    serverPort: number;
-    serverHost: string;
+    port: number;
+    host: string;
   };
   DATABASE: {
+    vendor: string;
     host: string;
     port: number;
     username: string;
@@ -30,15 +31,16 @@ const configs: Env = {
     production: process.env.NODE_ENV === "production",
   },
   SERVER: {
-    serverPort: parseInt(process.env.PORT || "3000"),
-    serverHost: process.env.HOST || "0.0.0.0",
+    host: process.env.HOST || "0.0.0.0",
+    port: parseInt(process.env.PORT || "3000"),
   },
   DATABASE: {
-    host: process.env.PG_HOST || "localhost",
-    port: parseInt(process.env.PG_PORT || "5432"),
-    username: process.env.PG_USERNAME || "",
-    password: process.env.PG_PASSWORD || "",
-    database: process.env.PG_DATABASE || "",
+    vendor: process.env.DATABASE_VENDOR || "postgres",
+    host: process.env.DATABASE_HOST || "localhost",
+    port: parseInt(process.env.DATABASE_PORT || "5432"),
+    username: process.env.DATABASE_USERNAME || "",
+    password: process.env.DATABASE_PASSWORD || "",
+    database: process.env.DATABASE_DATABASE || "",
   },
 };
 

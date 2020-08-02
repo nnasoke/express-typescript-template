@@ -20,5 +20,5 @@
     "strictPropertyInitialization": false
   },
   "include": ["./src/**/*.ts"],
-  "exclude": ["node_modules", "./tests/**/*.ts"]
+  "exclude": ["node_modules", "./src/migration/**/*.ts", "./tests/**/*.ts"]
 }

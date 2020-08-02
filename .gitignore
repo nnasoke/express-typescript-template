@@ -39,3 +39,6 @@ dist/**/*
 
 # runtime generated files
 access.log
+
+# test database
+*.sqlite*
