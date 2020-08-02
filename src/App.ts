@@ -1,3 +1,4 @@
+import "reflect-metadata";
 import express, { Request, Response, NextFunction } from "express";
 import cors from "cors";
 import { BAD_REQUEST } from "http-status-codes";
@@ -14,9 +15,9 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// Access & error logs
-if (Env.isProduction) app.use(errorLogs());
-else app.use(accessLogs());
+// Access & error logs, but nothing in test mode.
+if (Env.MODE.production) app.use(errorLogs());
+else if (Env.MODE.develop) app.use(accessLogs());
 
 // APIs
 app.use("/health-check", healthCheck);

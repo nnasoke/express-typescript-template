@@ -3,7 +3,7 @@
     /* Visit https://aka.ms/tsconfig.json to read more about this file */
     "baseUrl": "./",
     "outDir": "dist",
-    "target": "es5",
+    "target": "es6",
     "module": "commonjs",
 
     "types": ["intern", "cors", "express", "morgan", "supertest"],
@@ -14,7 +14,10 @@
 
     /* Advanced Options */
     "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true
+    "forceConsistentCasingInFileNames": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "strictPropertyInitialization": false
   },
   "include": ["./src/**/*.ts"],
   "exclude": ["node_modules", "./tests/**/*.ts"]
